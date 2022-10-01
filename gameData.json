@@ -1,0 +1,17 @@
+{
+  "Droopy": {
+    "initialValue": 10,
+    "initallyLocked": false,
+    "image": "./images/Droopy.svg"
+  },
+  "Jacky": {
+    "initialValue": 10,
+    "initallyLocked": true,
+    "image": "./images/Droopy.svg"
+  },
+  "Prairie": {
+    "initialValue": 10,
+    "initallyLocked": true,
+    "image": "./images/Droopy.svg"
+  }
+}

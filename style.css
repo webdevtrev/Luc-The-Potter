@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+html,
+body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+button {
+  background-color: transparent;
+  border: 3px solid black;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background-color: black;
+  color: white;
+  border: 3px solid black;
+}
+.Page1,
+.Page2 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  opacity: 1;
+  background-image: url("./images/Background.PNG");
+  background-size: cover;
+}
+.caption {
+  margin-top: 1rem;
+  background-color: white;
+  border: 3px solid black;
+  text-align: center;
+  padding: 1rem;
+}
+.Page2,
+.Page3 {
+  display: none;
+}
+img {
+  height: 50%;
+}
+
+.Page3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.Page3 .values {
+  padding: 1rem;
+  background-color: green;
+  font-size: 48px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+.Page3 .values img {
+  position: absolute;
+  left: 100px;
+  top: 10px;
+  height: 50px;
+  rotate: 0deg;
+  animation: 2s infinite lucSpin;
+  animation-timing-function: linear;
+  transform-origin: center;
+}
+@keyframes lucSpin {
+  0% {
+    rotate: 0deg;
+    height: 80px;
+  }
+  50% {
+    rotate: 180deg;
+    height: 50px;
+  }
+
+  100% {
+    rotate: 360deg;
+    height: 80px;
+  }
+}
+.Page3 .runway {
+  height: 300px;
+  background-color: tan;
+  position: relative;
+}
+.Page3 .runway .Model {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: fit-content;
+}
+.Page3 .runway .Model.Running {
+  animation: 2s infinite alternate lucRun;
+  /* animation-timing-function: linear; */
+}
+@keyframes lucRun {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+.Page3 .runway .Model img {
+  display: none;
+  height: 50%;
+  width: 114px;
+}
+.Page3 .runway .Model img[src] {
+  display: block;
+}
+.Page3 .actions {
+  flex-grow: 1;
+  background-color: rgb(180, 66, 66);
+  padding: 1rem;
+}
+.Page3 .actions ul {
+  padding: 0;
+}
+.Page3 .actions .Sell .Plants li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+}
+.Page3 .actions .Sell .Plants li * {
+  width: max(10%, 300px);
+  padding: 1rem;
+  margin-right: 2rem;
+}
+.Page3 .actions .Sell .Plants .Locked *:not(.Unlock) {
+  opacity: 0.5;
+  pointer-events: none;
+}
